@@ -9,12 +9,27 @@
     <title>Neznayou</title>
 </head>
 <body>
-  <ul class="navbar">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Laptop</a></li>
-    <li><a href="#">Smartphones</a></li>
-    <li><a href="#">Clothes</a></li>
-  </ul>
+  <div id="menuArea">
+    <input type="checkbox" id="menuToggle"></input>
   
+  <label for="menuToggle" class="menuOpen">
+    <div class="open"></div>
+  </label>
+  
+  <div class="menu menuEffects">
+    <label for="menuToggle"></label>
+    <div class="menuContent">
+      <ul>
+        <li><a href="{% url 'home' %}">HOME</a></li>
+        <li><a href="#">SHOOES</a></li>
+        <li><a href="#">MANS</a></li>
+        <li><a href="#">WOMANS</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+<h1 class="zago">FRESCOROMS</h1>
+<hr class="line">
 </body>
 </html>
