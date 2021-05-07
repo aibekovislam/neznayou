@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
+from .models import Products
+from django.db.models import Q
 
 # Create your views here.
 
@@ -7,4 +9,8 @@ def index(request):
 
 
 def products(request):
-    return render(request, "products.html")
+    all_products = Products.objects.all()
+    context = {
+        "products": all_products
+    }
+    return render(request, "products.html", context)

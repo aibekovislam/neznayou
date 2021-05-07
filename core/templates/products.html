@@ -2,7 +2,9 @@
 
 {%block content%}
 
-<h1>Hello world</h1>
+<h1 class="products-zago">Products:</h1>
 
-
+    {% for product in products %}
+        <h1>{{ product.title }}</h1>
+    {% endfor %}
 {% endblock %}
