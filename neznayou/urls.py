@@ -9,4 +9,5 @@ urlpatterns = [
     path('', index, name="home"),
     path('products/', products, name="products"),
     path('products/<int:pk>/', product_page, name="product_page")
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+ + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

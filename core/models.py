@@ -7,6 +7,7 @@ class Products(models.Model):
     text = models.CharField(max_length=150)
     date = models.DateTimeField(auto_now_add=True, null=True)
     rating = models.IntegerField(null=True, blank=True, default=0,validators=[MaxValueValidator(5)])
+    picture = models.ImageField(upload_to="product_image", blank=True, null=True, verbose_name="Картинка продукта")
 
 
     def __str__(self):
