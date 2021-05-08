@@ -14,3 +14,12 @@ def products(request):
         "products": all_products
     }
     return render(request, "products.html", context)
+
+
+
+def product_page(request, pk):
+    product_page = Products.objects.get(pk=pk)
+    context = {
+        "product": product_page
+    }
+    return render(request, "product_page.html", context)
