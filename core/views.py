@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Products
 from django.db.models import Q
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -23,3 +26,16 @@ def product_page(request, pk):
         "product": product_page
     }
     return render(request, "product_page.html", context)
+
+
+def sign_in(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)  
+        if user is not None:
+            print("Пользователь не найден")
+            if user.is_active:
+                login(request, user)
+                return redirect('products')
+    return render(request, "sign-in.html")
