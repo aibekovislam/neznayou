@@ -17,7 +17,12 @@
         <h1 class="zago">Neznayou</h1>
         <li><a href="{% url 'home' %}">Main</a></li>
         <li><a href="{% url 'products' %}">Products</a></li>
+        {% if not request.user.is_authenticated %}
         <li><a href="{% url 'sign-in' %}">Sign in</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <li><a href="#">Hello - {{ request.user.username }}</a></li>
+        {% endif %}
         <li><a href="#">About us</a></li>
     </ul>
 </div>
