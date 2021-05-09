@@ -12,6 +12,11 @@ class Products(models.Model):
     is_active = models.BooleanField(default=True)
 
 
+    class Meta:
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
+
+
     def __str__(self):
         return self.title
 
@@ -27,6 +32,26 @@ class Users(models.Model):
         verbose_name="Аккаунт"
     )
 
+
+    class Meta:
+        verbose_name = "Аккаунт"
+        verbose_name_plural = "Аккаунты"
+
     def __str__(self):
         return self.acc
+
+
+class AboutUs(models.Model):
+    title = models.CharField(max_length=250)
+    text = models.TextField()
+    img = models.ImageField(upload_to="Image_About_Us", blank=True, null=True, verbose_name="Картинка о нас")
+
+
+    class Meta:
+        verbose_name = "О нас"
+        verbose_name_plural = "О нас"
+
+    def __str__(self):
+        return self.title
+    
 
