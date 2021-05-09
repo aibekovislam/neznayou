@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Название Продукта" class="title_create"><br><br>
+        <input type="text" name="text" placeholder="Текст Продукта" class="text_create"><br><br>
+        <input type="date" name="date" placeholder="Дата выхода продукта" class="date_create"><br><br>
+        <input type="file" name="picture", placeholder="Картинка Продукта" class="picture_create"><br><br>
+        <button class="button_create">Adds</button>
+    </form>
+{% endblock %}

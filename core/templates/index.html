@@ -15,15 +15,15 @@
 <body>
 
 <div class="nav">
-    <h1 class="zago">Neznayou</h1>
+    <h1 class="zago"><a href="{% url 'products' %}">Neznayou</a></h1>
         <ul id="navbar">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Tech</a></li>
-                <li><a class="dropdown-item" href="#">Add Products</a></li>
+                <li><a class="dropdown-item" href="{% url 'create' %}">Add Products</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">About Us</a></li>
             </ul>

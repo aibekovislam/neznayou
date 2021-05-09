@@ -59,3 +59,34 @@ def reg(request):
         )
         user.save()
         return redirect('products')
+
+
+def create_products(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        text = request.POST['text']
+        date = request.POST['date']
+        picture = request.FILES.get('picture')
+        product = Products(title=title, text=text, date=date, picture=picture)
+        product.save()
+        return redirect('products')
+    return render(request, "create_products.html")
+
+
+def delete_products(request, pk):
+    product = Products.objects.get(pk=pk)
+    product.delete()
+    return redirect('products')
+
+
+def edit_products(request, pk):
+    product = Products.objects.get(pk=pk)
+    if request.method == 'POST':
+        product.title = request.POST.get('title')
+        product.text = request.POST.get('text')
+        product.date = request.POST.get('date')
+        product.picture = request.POST.get('picture')
+        product.save()
+        return redirect('products')
+    return render(request, "edit_product.html", {"product": product})
+

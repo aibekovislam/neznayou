@@ -54,8 +54,43 @@ a{
   }
 
   .products-div{
-    padding-top: 30px;
+    padding-top: 70px;
     text-align: center;
   }
 
-  
+  .products-zago{
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+  }
+
+  .title_create{
+    margin-top: 70px;
+    margin-left: 530px;
+    width: 500px;
+  }
+
+  .text_create{
+    margin-left: 530px;
+    width: 500px;
+    height: 100px;
+  }
+
+  .date_create{
+    margin-left: 530px;
+    width: 500px;
+  }
+
+  .picture_create{
+    margin-left: 670px;
+  }
+
+  .button_create{
+    margin-left: 630px;
+    width: 300px;
+  }
+
+  .form-edit{
+    margin-top: 190px;
+    margin-left: 630px;
+  }

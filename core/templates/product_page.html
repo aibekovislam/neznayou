@@ -3,7 +3,6 @@
 {% block content %}
 
 <h1>Product {{ product.title }}:</h1>
-        <h1>{{ product.title }}</h1>
         <hr>
         <p>{{ product.text }}</p>
         <hr>
@@ -13,4 +12,9 @@
     {% if product.picture %}
         <img src="{{ product.picture.url }}" alt="Картинка продукта отсуствует">
     {% endif %}
+
+    <a href="{% url 'delete_products' product.id %}">Delete</a>
+    <a href="{% url 'edit_product' product.id %}">Edit</a>
+
+
 {% endblock content %}
