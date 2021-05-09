@@ -34,8 +34,28 @@ def sign_in(request):
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)  
         if user is not None:
-            print("Пользователь не найден")
             if user.is_active:
                 login(request, user)
                 return redirect('products')
     return render(request, "sign-in.html")
+
+
+
+def sign_out(request):
+    logout(request)
+    return redirect('products')
+
+
+
+def reg(request):
+    if request.method == 'GET':
+        return render(request, "register.html")
+    elif request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = User.objects.create_user(
+            username=username,
+            password=password
+        )
+        user.save()
+        return redirect('products')
