@@ -2,9 +2,11 @@
 
 {%block content%}
 
-<h1 class="products-zago">Products:</h1>
+<div class="container products-div">
+    <h1 class="products-zago">Products:</h1>
 
     {% for product in products %}
         <h1><a href="{% url 'product_page' product.id %}">{{ product.title }}</a></h1>
     {% endfor %}
+</div>
 {% endblock %}
