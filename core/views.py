@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Products
+from .models import Products, Users, AboutUs
 from django.db.models import Q
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
@@ -89,4 +89,12 @@ def edit_products(request, pk):
         product.save()
         return redirect('products')
     return render(request, "edit_product.html", {"product": product})
+
+
+def about_us(request):
+    about_us_all = AboutUs.objects.all()
+    context = {
+        "about_us": about_us_all
+    }
+    return render(request, "about_us.html", context)
 

@@ -94,3 +94,16 @@ a{
     margin-top: 190px;
     margin-left: 630px;
   }
+
+  .about_us{
+    margin-top: 70px;
+  }
+
+  .about_us h1{
+    font-family: 'Playfair Display', serif;
+  }
+
+  .about_us p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }

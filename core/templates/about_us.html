@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% for about_uss in about_us %}
+    <div class="container">
+        <div class="about_us">
+            <h1>{{ about_uss.title }}</h1>
+            <hr>
+            <p>{{ about_uss.text }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
