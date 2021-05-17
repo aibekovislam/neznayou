@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from core.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -15,6 +15,7 @@ urlpatterns = [
     path('products/create/', create_products, name="create"),
     path('products/<int:pk>/delete', delete_products, name="delete_products"),
     path('products/<int:pk>/edit', edit_products, name="edit_product"),
-    path('about-us/', about_us, name="about_us")
+    path('about-us/', about_us, name="about_us"),
+    path('search/', search, name='search')
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

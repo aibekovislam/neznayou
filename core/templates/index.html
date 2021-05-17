@@ -43,10 +43,13 @@
             {% if not request.user.is_authenticated %}
                 <li><a href="{% url 'register' %}">Registrations</a></li>
             {% endif %}
+                <li><form actions="{% url 'search' %}" name="word">
+                        <input type="search" name="word" placeholder="Поиск">
+                        <button type="submit">Поиск</button>
+                    </form>
+                </li>
     </ul>
 </div>
-
-
 {% block content %}
 {% endblock %}
 </body>

@@ -98,3 +98,9 @@ def about_us(request):
     }
     return render(request, "about_us.html", context)
 
+def search(request):
+    word = request.GET.get("word")
+    products = Products.objects.filter(
+        Q(title__icontains=word) | Q(text__icontains=word),
+        is_active=True)
+    return render(request, "products.html", {"products": products})
