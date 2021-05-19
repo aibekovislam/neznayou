@@ -35,7 +35,7 @@ a{
     text-decoration: none;
     display: inline-block;
     width: 250px;
-    margin-top: 10px;
+    margin-top: 40px;
   }
   
   #navbar h1{
@@ -43,7 +43,7 @@ a{
     text-decoration: none;
     display: inline-block;
     width: 100px;
-    margin-top: 10px;
+    margin-top: 100px;
     font-family: 'Abel', sans-serif;
   }
 
@@ -51,6 +51,12 @@ a{
   .zago{
     font-weight: bold;
     position: relative;
+    margin-top: 27px;
+  }
+
+  .zago a{
+    text-decoration: none;
+    margin-top: 40px;
   }
 
   .products-div{
@@ -107,3 +113,10 @@ a{
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
   }
+
+
+  .bg-custom{
+    background-color: #77ff00;
+  }
+
+

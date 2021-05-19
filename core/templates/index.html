@@ -14,42 +14,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">           
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Neznayou</title>
+    <title>Letto - Company</title>
 </head>
 <body>
+ 
 
-<div class="nav">
-    <h1 class="zago"><a href="{% url 'products' %}">Neznayou</a></h1>
-        <ul id="navbar">
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'products' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Products
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Tech</a></li>
-                <li><a class="dropdown-item" href="{% url 'create' %}">Add Products</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{% url 'about_us' %}">About Us</a></li>
-            </ul>
-            </li>
-            {% if not request.user.is_authenticated %}
-                <li><a href="{% url 'sign-in' %}">Sign in</a></li>
-            {% else %}
-                <li><a href="{% url 'sign-out' %}">Sign out</a></li>
-            {% endif %}
-            {% if request.user.is_authenticated %}
-                <li><a href="#">Hello - {{ request.user.username }}</a></li>
-            {% endif %}
-            {% if not request.user.is_authenticated %}
-                <li><a href="{% url 'register' %}">Registrations</a></li>
-            {% endif %}
-            <li><form actions="{% url 'search' %}" name="word">
-                    <input type="search" name="word" placeholder="Поиск">
-                    <button type="submit">Поиск</button>
-                </form>
-            </li>
-    </ul>
-</div>
+  <header class="p-3 bg-custom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="{% url 'products' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/><img src="https://img.icons8.com/windows/32/000000/stream-logo.png"/><h1 class="text-dark">Letto</h1></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'products' %}" class="nav-link px-2 text-dark">Home</a></li>
+          <li><a href="{% url 'create' %}" class="nav-link px-2 text-dark">Add Products</a></li>
+          <li><a href="#" class="nav-link px-2 text-dark">Tech</a></li>
+          <li><a href="#" class="nav-link px-2 text-dark">FAQs</a></li>
+          <li><a href="{% url 'about_us' %}" class="nav-link px-2 text-dark">About us</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" name="word">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" name="word">
+        </form>
+
+        <div class="text-end">
+          {% if not request.user.is_authenticated %}
+            <a href="{% url 'register' %}" class="btn btn-light me-2">Login</a>
+            <a href="{% url 'sign-in' %}" class="btn btn-warning">Sign-up</a>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+            <a href="#" class="btn btn-light me-2">Hello - {{ request.user.username }}</a>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+            <a href="sign-out" class="btn btn-danger">Sign out</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="b-example-divider"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
 {% block content %}
 {% endblock %}
 </body>
