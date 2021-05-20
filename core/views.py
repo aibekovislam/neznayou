@@ -32,7 +32,7 @@ def sign_in(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=password)  
+        user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -43,7 +43,7 @@ def sign_in(request):
 
 def sign_out(request):
     logout(request)
-    return redirect('products')
+    return redirect(products)
 
 
 
@@ -97,6 +97,8 @@ def about_us(request):
         "about_us": about_us_all
     }
     return render(request, "about_us.html", context)
+
+
 
 def search(request):
     word = request.GET.get("word")

@@ -1,5 +1,5 @@
 body{
-    font-family: 'Abel', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -12,52 +12,6 @@ a{
     margin-left: 150px;
 }
 
-#navbar {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  #navbar li { display: inline; 
-      transition-duration: 0.1s;
-  }
-  
-  
-  #navbar {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    width: 1000px;
-    text-align: center;
-    font-weight: bolder;
-  }
-  #navbar a {
-    padding: 5px 10px;
-    text-decoration: none;
-    display: inline-block;
-    width: 250px;
-    margin-top: 40px;
-  }
-  
-  #navbar h1{
-    padding: 5px 0px;
-    text-decoration: none;
-    display: inline-block;
-    width: 100px;
-    margin-top: 100px;
-    font-family: 'Abel', sans-serif;
-  }
-
-
-  .zago{
-    font-weight: bold;
-    position: relative;
-    margin-top: 27px;
-  }
-
-  .zago a{
-    text-decoration: none;
-    margin-top: 40px;
-  }
 
   .products-div{
     padding-top: 70px;
@@ -116,7 +70,79 @@ a{
 
 
   .bg-custom{
-    background-color: #77ff00;
+    background-color: #FFFF00;
+    color: black;
+  }
+
+  .bg-custom a {
+    color: black;
   }
 
 
+  .bg-custom a:hover {
+    color: black;
+  }
+
+  .nav-2{
+    width: 1536px;
+    height: 25px;
+    background-color: #8B00FF;
+    text-align: center;
+    color: white;
+  }
+
+  .btn-custom1{
+    text-decoration: none;
+    color: white;
+  }
+
+  .btn-btn{
+    width: 80px;
+    height: 36px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #8B00FF;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  .btn-btn a{
+    position: relative;
+    left: 3px;
+    color: white;
+    text-align: center;
+  }
+
+
+  .btn-custom2{
+    text-decoration: none;
+    color: white;
+  }
+
+  .btn-btn-2{
+    width: 80px;
+    height: 36px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #8B00FF;
+  }
+  
+  .btn-btn-2 a{
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+  .btn-btn-2 a:hover{
+    color: #FFFF00;
+    transition-duration: 0.3s;
+  }
+
+
+  .btn-btn a:hover{
+    color: #FFFF00;
+    transition-duration: 0.3s;
+  }
+
+  
