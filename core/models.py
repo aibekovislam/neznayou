@@ -53,5 +53,20 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=70)
+    phone_number = models.CharField(max_length=90)
+
+
+    class Meta:
+        verbose_name = 'Связи и контакты'
+        verbose_name_plural = 'Связи и контакты'
+
+
+    def __str__(self):
+        return self.name
+    
     
 

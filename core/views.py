@@ -1,8 +1,12 @@
+from django import contrib
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Products, Users, AboutUs
+import rest_framework
+from .models import Products, Users, AboutUs, ContactUs
 from django.db.models import Q
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
+from .serializers import *
+
 
 
 # Create your views here.
@@ -43,7 +47,7 @@ def sign_in(request):
 
 def sign_out(request):
     logout(request)
-    return redirect(products)
+    return redirect(index)
 
 
 
@@ -106,3 +110,18 @@ def search(request):
         Q(title__icontains=word) | Q(text__icontains=word),
         is_active=True)
     return render(request, "products.html", {"products": products})
+
+
+
+
+
+        
+
+def create_contact(request):
+    if request.method == 'POST':
+        name = request.POST["name"]
+        phone_number = request.POST["phone_number"]
+        contact_us = ContactUs(name=name, phone_number=phone_number)
+        contact_us.save() 
+        return redirect('products')
+    return render(request, "main.html",)

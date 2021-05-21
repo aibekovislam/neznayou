@@ -56,10 +56,11 @@
     <div class="container">
 
     <div class="form">
-        <form class="form-contact">
-            <input type="text" placeholder="Name" class="input1"><br><br>
-            <input type="text" placeholder="Phone Number" class="input2"><br><br>
-            <button class="btn-input"><a href="#">Send</a></button>
+        <form class="form-contact" method='POST'>
+            {% csrf_token %}
+            <input type="text" placeholder="Name" class="input1" name="name"><br><br>
+            <input type="text" placeholder="Phone Number" class="input2" name="phone_number"><br><br>
+            <button type="submit" class="btn-input"><a href="{% url 'contact' %}">Send</a></button>
         </form>
     </div>
     </div>
@@ -72,7 +73,7 @@
 <footer class="py-3">
 <div class="copy-bottom-txt text-center py-3">
 <p> 
-© 2020 Letto Company. All Rights Reserved | Directed by <a href="#" target="_blank">Aibekov Islam</a>
+© 2021 Letto Company. All Rights Reserved | Directed by <a href="#" target="_blank">Aibekov Islam</a>
 </p>
 </div>
 <div class="social-icons mt-lg-3 mt-2 text-center">

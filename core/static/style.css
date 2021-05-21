@@ -288,12 +288,19 @@ a{
     border-radius: 15px;
     border: none;
     background-color: #8B00FF;
+    transition-duration: 0.1s;
   }
+
 
   .btn-input a {
     text-decoration: none;
     color: white
   }
+
+  .btn-input a:hover{
+    color: #FFFF00;
+  }
+
 
   .contact{
     text-align: center;
