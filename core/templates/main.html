@@ -1,90 +1,41 @@
-{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/df966d76e1.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">           
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="zago"><a href="#">fairy</a></h1>
+
+    <div class="button-zago"><a href="{% url 'register' %}" class="btn-zago">Зарегистрироваться</a></div>
+    <div class="button-sign"><a href="{% url 'sign-in' %}" class="btn-sign">Войти</a></div>
 
 
-{% block content %}
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
 
-<div class="fullscreen">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-6">
-                <img src="https://img.icons8.com/windows/512/000000/stream-logo.png"/ class="mt-4">
-            </div>
-            <div class="col-6">
-                <h1 class="fw-bolder">Letto - company of your dream</h1>
-                <hr>
-                <p class="fw-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur facilis nihil vero nostrum laudantium veritatis at, ut, corrupti quas beatae iste eligendi deleniti illo sequi reprehenderit nemo a in autem?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptatibus, mollitia consequatur ea odio corporis deleniti ratione illo ad ducimus iusto, optio porro nam asperiores, debitis ipsum dolor. Doloribus, quidem.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="fullscreen2">
-    <h1 class="fw-bold header1">What we doing?</h1>
-    <div class="container">
-    <div class="row align-items-center">
-    <div class="col">
-        <div class="block">
-            <p class="fw-bold">Letto inc.</p>
-            <h1 class="fw-bold">Convenient workshop</h1>
-        </div>
-        </div>
-    <div class="col">
-        <div class="block2">
-            <p class="fw-bold">Letto inc.</p>
-            <h1 class="fw-bold">Delivery of goods <br>to home</h1>
-        </div>
-        </div>
-    <div class="col">
-        <div class="block3">
-            <p class="fw-bold">Letto inc.</p>
-            <h1 class="fw-bold">Professionalism of the company</h1>
-        </div>
-    </div>
-
-    <h1 class="inc fw-bold">Letto inc.</h1>
-    </div>
-    </div>
-</div>
-
-
-
-<div class="fullscreen3">
-    <h1 class="contact fw-bold">Contacts us</h1>
-    <div class="container">
-
-    <div class="form">
-        <form class="form-contact" method='POST'>
-            {% csrf_token %}
-            <input type="text" placeholder="Name" class="input1" name="name"><br><br>
-            <input type="text" placeholder="Phone Number" class="input2" name="phone_number"><br><br>
-            <button type="submit" class="btn-input"><a href="{% url 'contact' %}">Send</a></button>
-        </form>
-    </div>
-    </div>
-</div>
+ 
+</body>
+</html>
 
 
 
 
 
-<footer class="py-3">
-<div class="copy-bottom-txt text-center py-3">
-<p> 
-© 2021 Letto Company. All Rights Reserved | Directed by <a href="#" target="_blank">Aibekov Islam</a>
-</p>
-</div>
-<div class="social-icons mt-lg-3 mt-2 text-center">
-<ul>
-<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-<li><a href="#"><span class="fa fa-rss"></span></a></li>
-</ul>
-</div>
-</footer>
-
-
-
-{% endblock %}
